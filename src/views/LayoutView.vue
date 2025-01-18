@@ -10,7 +10,7 @@
         </transition>
       </RouterView>
     </main>
-    <footer>Footer</footer>
+    <TheFooter />
   </div>
 </template>
 
@@ -18,6 +18,7 @@
 import { watch } from 'vue'
 import { PAGE_TITLE } from '@/constant/common'
 import { useRoute, useRouter } from 'vue-router'
+import TheFooter from '@/components/common/TheFooter.vue'
 
 const route = useRoute()
 const router = useRouter()
