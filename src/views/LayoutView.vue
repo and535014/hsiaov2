@@ -1,8 +1,7 @@
 <template>
   <div class="flex h-screen flex-col">
     <nav class="flex gap-3">
-      <div @click="toPathHandler('about')">About</div>
-      <div @click="toPathHandler('others')">Others</div>
+      <div v-for="page in pages" :key="page" @click="toPathHandler(page)">{{ page }}</div>
     </nav>
     <main class="flex-1">
       <RouterView v-slot="{ Component }">
@@ -22,6 +21,8 @@ import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
+
+const pages = ['about', 'projects', 'playground', 'contact']
 
 function loadPageTitle() {
   document.title = route.meta?.title || PAGE_TITLE

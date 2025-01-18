@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is an others page</h1>
+    <h1>This is an playground page</h1>
   </div>
 </template>
 

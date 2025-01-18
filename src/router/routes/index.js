@@ -5,7 +5,7 @@ const routes = [
     path: '/',
     name: 'home',
     component: LayoutView,
-    redirect: '/other',
+    redirect: '/about',
     children: [
       {
         path: 'about',
@@ -16,11 +16,27 @@ const routes = [
         },
       },
       {
-        path: 'others',
-        name: 'others',
-        component: () => import('@/views/OthersView.vue'),
+        path: 'projects',
+        name: 'projects',
+        component: () => import('@/views/ProjectsView.vue'),
         meta: {
-          title: '其他',
+          title: '專案作品',
+        },
+      },
+      {
+        path: 'playground',
+        name: 'playground',
+        component: () => import('@/views/PlaygroundView.vue'),
+        meta: {
+          title: '互動區',
+        },
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: () => import('@/views/ContactView.vue'),
+        meta: {
+          title: '聯絡方式',
         },
       },
     ],
