@@ -14,7 +14,12 @@
 
       <hr class="border-slate-300" />
 
-      <div class="text-slate-600">{{ $t('footer.copyright', { year }) }}</div>
+      <div class="flex items-center justify-between text-slate-600">
+        <span>
+          {{ $t('footer.copyright', { year }) }}
+        </span>
+        <span>v{{ version }}</span>
+      </div>
     </div>
   </footer>
 </template>
@@ -24,5 +29,6 @@ import { EMAIL, SKILL_LIST } from '@/constant/common'
 
 import moment from 'moment'
 
+const version = __APP_VERSION__
 const year = moment().year()
 </script>

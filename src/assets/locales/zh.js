@@ -15,6 +15,6 @@ export default {
   },
   footer: {
     skill_hint: '本網站由下列技術開發：',
-    copyright: '© {year} Yuting Hsiao 蕭毓庭 | All Rights Reserved.',
+    copyright: '© {year} Yuting Hsiao 蕭毓庭 ・ All Rights Reserved.',
   },
 }
