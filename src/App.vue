@@ -9,8 +9,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 const isDarkMode = ref(false)
 </script>
 

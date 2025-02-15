@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import AutoImport from 'unplugin-auto-import/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -40,6 +41,30 @@ export default defineConfig(({ mode }) => {
         customDomId: '__svg__icons__dom__',
       }),
       removeConsole(),
+      AutoImport({
+        // targets to transform
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+          /\.vue$/,
+          /\.vue\?vue/, // .vue
+          /\.md$/, // .md
+        ],
+        imports: [
+          'vue',
+          'pinia',
+          'vue-router',
+          {
+            axios: [
+              ['default', 'axios'], // import axios as default
+            ],
+          },
+        ],
+        eslintrc: {
+          enabled: false,
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true,
+        },
+      }),
     ],
     resolve: {
       alias: {

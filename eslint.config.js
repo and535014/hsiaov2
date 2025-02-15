@@ -23,6 +23,7 @@ export default [
   },
   skipFormatting,
   {
+    extends: ['./.eslintrc-auto-import.json'],
     rules: {
       'vue/multi-word-component-names': 'off',
     },
