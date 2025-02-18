@@ -1,5 +1,5 @@
 <template>
-  <footer class="fixed inset-x-0 bottom-0 bg-primary-100 text-sm text-slate-900">
+  <footer class="bg-primary-100 text-sm">
     <div class="mx-auto flex max-w-screen-xl flex-col gap-2 px-4 pb-8 pt-4">
       <div class="mb-8 flex flex-col gap-4">
         <p class="text-xs">{{ $t('footer.skill_hint') }}</p>

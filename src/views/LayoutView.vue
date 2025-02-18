@@ -1,9 +1,7 @@
 <template>
   <div class="flex h-screen flex-col">
-    <nav class="flex gap-3">
-      <div v-for="page in pages" :key="page" @click="toPathHandler(page)">{{ page }}</div>
-    </nav>
-    <main class="flex-1">
+    <Navbar />
+    <main class="flex-1" :style="wrapperStyle">
       <RouterView v-slot="{ Component }">
         <transition mode="out-in" name="router" class="flex-1">
           <component :is="Component" />
@@ -16,20 +14,16 @@
 
 <script setup>
 import { PAGE_TITLE } from '@/constant/common'
+import { useLayoutStore } from '@/stores/layout'
 
 import TheFooter from '@/components/common/TheFooter.vue'
+import Navbar from '@/components/common/Navbar.vue'
 
 const route = useRoute()
-const router = useRouter()
-
-const pages = ['about', 'projects', 'playground', 'contact']
+const { wrapperStyle } = storeToRefs(useLayoutStore())
 
 function loadPageTitle() {
   document.title = route.meta?.title || PAGE_TITLE
-}
-
-function toPathHandler(path) {
-  router.push(path)
 }
 
 watch(route, () => {
