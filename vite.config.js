@@ -57,6 +57,7 @@ export default defineConfig(({ mode }) => {
             axios: [
               ['default', 'axios'], // import axios as default
             ],
+            'vue-i18n': ['useI18n'],
           },
         ],
         eslintrc: {

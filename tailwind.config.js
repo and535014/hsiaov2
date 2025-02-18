@@ -1,7 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import themes from './src/assets/themes'
-
-const theme = themes.default
 
 export default {
   mode: 'jit',
@@ -9,7 +6,63 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
-      colors: theme.colors,
+      colors: {
+        // primary
+        'primary-100': 'var(--color-brand-100)',
+        'primary-200': 'var(--color-brand-200)',
+        'primary-300': 'var(--color-brand-300)',
+        'primary-400': 'var(--color-brand-400)',
+        'primary-500': 'var(--color-brand-500)',
+        'primary-600': 'var(--color-brand-600)',
+        'primary-700': 'var(--color-brand-700)',
+        'primary-800': 'var(--color-brand-800)',
+        'primary-900': 'var(--color-brand-900)',
+        'primary-1000': 'var(--color-brand-1000)',
+        // slate
+        'slate-100': 'var(--color-slate-100)',
+        'slate-200': 'var(--color-slate-200)',
+        'slate-300': 'var(--color-slate-300)',
+        'slate-400': 'var(--color-slate-400)',
+        'slate-500': 'var(--color-slate-500)',
+        'slate-600': 'var(--color-slate-600)',
+        'slate-700': 'var(--color-slate-700)',
+        'slate-800': 'var(--color-slate-800)',
+        'slate-900': 'var(--color-slate-900)',
+        'slate-1000': 'var(--color-slate-1000)',
+        // black
+        'black-100': 'var(--color-black-100)',
+        'black-200': 'var(--color-black-200)',
+        'black-300': 'var(--color-black-300)',
+        'black-400': 'var(--color-black-400)',
+        'black-500': 'var(--color-black-500)',
+        'black-600': 'var(--color-black-600)',
+        'black-700': 'var(--color-black-700)',
+        'black-800': 'var(--color-black-800)',
+        'black-900': 'var(--color-black-900)',
+        'black-1000': 'var(--color-black-1000)',
+        // gray
+        'gray-100': 'var(--color-gray-100)',
+        'gray-200': 'var(--color-gray-200)',
+        'gray-300': 'var(--color-gray-300)',
+        'gray-400': 'var(--color-gray-400)',
+        'gray-500': 'var(--color-gray-500)',
+        'gray-600': 'var(--color-gray-600)',
+        'gray-700': 'var(--color-gray-700)',
+        'gray-800': 'var(--color-gray-800)',
+        'gray-900': 'var(--color-gray-900)',
+        'gray-1000': 'var(--color-gray-1000)',
+        // white
+        'white-100': 'var(--color-white-100)',
+        'white-200': 'var(--color-white-200)',
+        'white-300': 'var(--color-white-300)',
+        'white-400': 'var(--color-white-400)',
+        'white-500': 'var(--color-white-500)',
+        'white-600': 'var(--color-white-600)',
+        'white-700': 'var(--color-white-700)',
+        'white-800': 'var(--color-white-800)',
+        'white-900': 'var(--color-white-900)',
+        'white-1000': 'var(--color-white-1000)',
+      },
     },
   },
   plugins: [],
