@@ -5,6 +5,7 @@ export default {
   routes: {
     about: '關於我',
     projects: '專案作品',
+    playground: '遊樂場',
     contact: '聯絡方式',
   },
   button: {
