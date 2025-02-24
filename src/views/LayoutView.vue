@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen flex-col">
+  <div class="flex min-h-screen flex-col">
     <Navbar />
     <main class="flex-1" :style="wrapperStyle">
       <RouterView v-slot="{ Component }">
