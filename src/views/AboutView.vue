@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-auto max-w-screen-lg">
-    <section id="intro" class="h-screen-check flex flex-col items-start justify-center gap-10">
+  <div class="mx-auto max-w-screen-lg px-4">
+    <section class="h-screen-check relative flex flex-col items-start justify-center gap-10">
       <div>
         <h1 class="mb-3 text-4xl">{{ $t('about.intro.greeting') }}</h1>
         <p class="text-2xl text-slate-700" v-html="$t('about.intro.description')"></p>
@@ -19,18 +19,16 @@
           @click="navigateTo(ROUTES.CONTACT)"
         />
       </div>
-      <a
-        href="#skills"
-        class="mx-auto inline-flex animate-bounce flex-col items-center gap-1 p-2 opacity-60 hover:text-primary-800"
-      >
-        <span>
-          {{ $t('button.more') }}
-        </span>
-        <Icon name="common-angle_down" size="24" />
-      </a>
+      <Button
+        :label="$t('button.more')"
+        :severity="BUTTON_SEVERITY.Subtle"
+        icon="common-angle_down"
+        class="absolute bottom-0 left-1/2 mb-6 inline-flex -translate-x-1/2 animate-bounce flex-col-reverse items-center gap-1 p-2 opacity-60 hover:text-primary-800"
+        @click="scrollToSkills"
+      />
     </section>
-    <section id="skills" class="min-h-screen-check pb-8" :style="wrapperStyle">
-      <h1 class="mb-4">{{ $t('about.skills.title') }}</h1>
+    <section ref="skillRef" class="min-h-screen-check">
+      <h1 class="mb-8">{{ $t('about.skills.title') }}</h1>
       <div class="grid grid-cols-2 grid-rows-2 gap-8">
         <Card
           v-for="skill in localeSkillList"
@@ -40,6 +38,10 @@
           class="auto-cols-fr transition-all duration-300 hover:scale-105 hover:shadow-xl"
         />
       </div>
+    </section>
+    <section class="min-h-screen-check">
+      <h1 class="mb-8 text-center">{{ $t('about.experiences.title') }}</h1>
+      <Timeline :items="experienceList" />
     </section>
   </div>
 </template>
@@ -52,14 +54,14 @@ import { useCommonStore } from '@/stores/common'
 import { useAboutStore } from '@/stores/about'
 
 import useNavigation from '@/composables/common/navigation'
-import { useLayoutStore } from '@/stores/layout'
+import Timeline from '@/components/common/Timeline.vue'
 
 const { locale } = useI18n()
 const { navigateTo } = useNavigation()
 const { openResumeFile } = useCommonStore()
-const { wrapperStyle } = storeToRefs(useLayoutStore())
-const { skillList } = storeToRefs(useAboutStore())
+const { skillList, experienceList } = storeToRefs(useAboutStore())
 
+const skillRef = ref(null)
 const isEnglish = computed(() => locale.value === LOCALES.EN)
 
 const localeSkillList = computed(() => {
@@ -68,6 +70,12 @@ const localeSkillList = computed(() => {
     items: skill.items.map((item) => (isEnglish.value ? item.description_en : item.description)),
   }))
 })
+
+function scrollToSkills() {
+  if (skillRef.value) {
+    skillRef.value.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -76,6 +84,6 @@ const localeSkillList = computed(() => {
 }
 
 section {
-  @apply border-b border-gray-100;
+  @apply border-b border-gray-100 pb-12 pt-10;
 }
 </style>

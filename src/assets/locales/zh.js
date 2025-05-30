@@ -29,5 +29,8 @@ export default {
     skills: {
       title: '相關專業技能',
     },
+    experiences: {
+      title: '過往經歷',
+    },
   },
 }
