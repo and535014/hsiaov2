@@ -30,7 +30,7 @@
     <section ref="skillRef" class="min-h-screen-check">
       <h1 class="mb-8">{{ $t('about.skills.title') }}</h1>
       <div class="grid grid-cols-2 grid-rows-2 gap-8">
-        <Card
+        <SkillCard
           v-for="skill in localeSkillList"
           :key="skill.title"
           :title="skill.title"
@@ -54,6 +54,7 @@ import { useCommonStore } from '@/stores/common'
 import { useAboutStore } from '@/stores/about'
 
 import useNavigation from '@/composables/common/navigation'
+import SkillCard from '@/components/SkillCard.vue'
 import Timeline from '@/components/common/Timeline.vue'
 
 const { locale } = useI18n()
