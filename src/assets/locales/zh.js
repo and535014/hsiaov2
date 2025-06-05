@@ -12,6 +12,8 @@ export default {
     resume: '履歷',
     contact_me: '聯絡我！',
     more: '更多',
+    more_info: '更多資訊',
+    forward: '前往網站',
   },
   label: {
     email: 'Email',

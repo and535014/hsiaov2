@@ -1,13 +1,14 @@
 <template>
-  <div class="overflow-hidden rounded-lg bg-white shadow-md">
-    <h2 class="bg-primary-100 px-4 py-2.5 text-primary-800">
-      {{ title }}
-    </h2>
-    <div>
-      <ul v-if="items?.length" class="list-inside list-disc px-4 pb-3 pt-2">
-        <li v-for="(item, index) in items" :key="index" class="p-1">{{ item }}</li>
-      </ul>
+  <div class="flex flex-col rounded-lg bg-white p-5 shadow-[0_0px_20px_0px_rgba(0,0,0,0.1)]">
+    <div class="flex flex-1 flex-col gap-4">
+      <h1>
+        <slot name="title" />
+      </h1>
+      <div class="flex-1">
+        <slot name="content" />
+      </div>
     </div>
+    <slot name="footer" />
   </div>
 </template>
 
@@ -15,9 +16,6 @@
 defineProps({
   title: {
     type: String,
-  },
-  items: {
-    type: Array,
   },
 })
 </script>
