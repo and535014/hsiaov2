@@ -24,7 +24,7 @@
             :label="$t('button.forward')"
             :severity="BUTTON_SEVERITY.Neutral"
             class="flex-1"
-            @click="goWebsite"
+            @click="openUrl(url)"
           />
         </div>
       </template>
@@ -58,7 +58,7 @@ const props = defineProps({
   },
 })
 
-const { navigateTo } = useNavigation()
+const { navigateTo, openUrl } = useNavigation()
 
 const wrapperStyle = computed(() => ({
   backgroundImage: `url('${props.cover}')`,
@@ -69,9 +69,5 @@ const wrapperStyle = computed(() => ({
 
 function goDetailPage() {
   navigateTo(`/projects/${props.id}`)
-}
-
-function goWebsite() {
-  window.open(props.url, '_blank')
 }
 </script>

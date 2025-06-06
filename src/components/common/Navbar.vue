@@ -1,12 +1,11 @@
 <template>
-  <nav
-    ref="navRef"
-    class="fixed inset-x-0 top-0 z-10 mx-4 transition-all duration-500"
-    :class="{ 'top-3': scrollY > 0 }"
-  >
+  <nav ref="navRef" class="fixed inset-x-0 top-3 z-10">
     <div
       class="mx-auto flex max-w-screen-xl items-center justify-between rounded-full bg-white px-4 py-2.5 transition-all duration-500"
-      :class="{ 'shadow-[0_0px_20px_0px_rgba(0,0,0,0.1)]': scrollY > 0 }"
+      :class="{
+        'scale-100 shadow-[0_0px_30px_0px_rgba(0,0,0,0.1)]': scrollY > 0,
+        'scale-95': scrollY <= 0,
+      }"
     >
       <RouterLink to="/" class="group flex items-center gap-4">
         <img

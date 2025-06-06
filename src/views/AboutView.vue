@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-screen-lg px-4">
+  <div class="mx-auto max-w-screen-xl px-4">
     <section class="h-screen-check relative flex flex-col items-start justify-center gap-10">
       <div>
         <h1 class="mb-3 text-4xl">{{ $t('about.intro.greeting') }}</h1>

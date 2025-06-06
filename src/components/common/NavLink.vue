@@ -27,7 +27,7 @@ const props = defineProps({
 })
 
 const route = useRoute()
-const isActive = computed(() => route.path === props.to)
+const isActive = computed(() => route.path === props.to || route.path.startsWith(props.to + '/'))
 </script>
 
 <style lang="postcss" scoped>

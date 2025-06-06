@@ -14,6 +14,7 @@ export default {
     more: '更多',
     more_info: '更多資訊',
     forward: '前往網站',
+    github: 'GitHub',
   },
   label: {
     email: 'Email',

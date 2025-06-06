@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto grid max-w-screen-lg gap-4 px-4 pb-6" :style="wrapperStyle">
+  <section class="mx-auto grid max-w-screen-xl gap-8 px-4 pb-6" :style="wrapperStyle">
     <Post v-for="project in projectList" :key="project.id" v-bind="project" />
   </section>
 </template>
